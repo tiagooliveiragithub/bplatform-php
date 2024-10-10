@@ -1,47 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <?php
-include('pages/partials/header.php');
+include('pages/partials/head.php');
 ?>
 
-<main>
-  <div class="website_wrapper">
-    <!-- Main content -->
+<body>
+  <?php
+  include('pages/partials/header.php');
+  ?>
+  <main>
+    <div class="website_wrapper">
+      <!-- Main content -->
 
-    <main class="main-content section-wrapper">
-      <div class="section-content-wide">
-        <div class="section-gap">
-          <div class="card-grid">
+      <main class="main-content section-wrapper">
+        <div class="section-content-wide">
+          <div class="section-gap">
+            <div class="card-grid">
 
-            <article class="card">
-              <div class="card-text-wrapper">
-                <div class="card-title-wrapper">
-                  <h2 class="card-title">
-                    <a href="#" class="card-title-link">
-                      Post Title
-                    </a>
-                  </h2>
-                </div>
-                <div class="card-content-wrapper">
-                  <p class="card-content">
-                    Post Excerpt Post Excerpt Post Excerpt Post Excerpt
-                  </p>
+              <article class="card">
+                <div class="card-text-wrapper">
+                  <div class="card-title-wrapper">
+                    <h2 class="card-title">
+                      <a href="#" class="card-title-link">
+                        Post Title
+                      </a>
+                    </h2>
+                  </div>
+                  <div class="card-content-wrapper">
+                    <p class="card-content">
+                      Post Excerpt Post Excerpt Post Excerpt Post Excerpt
+                    </p>
 
-                  <div class="card-actions">
-                    <a class="card-action-link" href="#">
-                      <span>Read</span>
-                      <i class="fa-solid fa-circle-arrow-right"></i>
-                    </a>
+                    <div class="card-actions">
+                      <a class="card-action-link" href="#">
+                        <span>Read</span>
+                        <i class="fa-solid fa-circle-arrow-right"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-            </article>
+              </article>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
-  </div>
-</main>
+      </main>
+    </div>
+  </main>
 
-<?php
-include('pages/partials/footer.php');
-?>
+  <?php
+  include('pages/partials/footer.php');
+  ?>
+
+</body>
+
+</html>
