@@ -2,11 +2,10 @@
   --clr-primary: #121e2a;
   --clr-secondary: #e26a6a;
   --clr-tertiary: #d4ac47;
-  --clr-text: #e9e2e2;
-  --clr-background: #181620;
-
-  --clr-primary-card: #121e2a;
-
+  
+  --clr-primary-card: #d3d7db;
+  --clr-background: #c8c3c3;
+  --clr-text: #2a2832;
 
   --clr-warning: #f0cd77;
   --clr-success: #02b302;
@@ -17,9 +16,9 @@
 }
 
 body.dark {
-  --clr-primary-card: #d3d7db;
-  --clr-text: #2a2832;
-  --clr-background: #c8c3c3;
+  --clr-primary-card: #121e2a;
+  --clr-background: #181620;
+  --clr-text: #e9e2e2;
 }
 
 body {
