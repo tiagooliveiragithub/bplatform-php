@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
     if (mysqli_num_rows($result) == 1) {
         $post = mysqli_fetch_assoc($result);
         $thumbnail_name = $post['thumbnail'];
-        $thumbnail_path = '../images/' . $thumbnail_name;
+        $thumbnail_path = 'images/' . $thumbnail_name;
 
         if ($thumbnail_path) {
             unlink($thumbnail_path);
@@ -28,5 +28,5 @@ if (isset($_GET['id'])) {
     }
 }
 
-header('location: ' . WEBSITE_URL . 'dashboard/');
+header('location: ' . WEBSITE_URL . 'dashboard.php');
 die();

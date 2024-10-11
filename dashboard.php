@@ -20,7 +20,7 @@ $posts = mysqli_query($connection, $query);
       <div class="section-content-wide">
         <section class="dashboard">
           <?php if (isset($_SESSION['add-post-success'])): ?>
-            <div class="alert__message success">
+            <div class="alert-msg success">
               <p>
                 <?= $_SESSION['add-post-success'];
                 unset($_SESSION['add-post-success']);
@@ -28,7 +28,7 @@ $posts = mysqli_query($connection, $query);
               </p>
             </div>
           <?php elseif (isset($_SESSION['edit-post-success'])): ?>
-            <div class="alert__message success">
+            <div class="alert-msg success">
               <p>
                 <?= $_SESSION['edit-post-success'];
                 unset($_SESSION['edit-post-success']);
@@ -36,7 +36,7 @@ $posts = mysqli_query($connection, $query);
               </p>
             </div>
           <?php elseif (isset($_SESSION['delete-post-success'])): ?>
-            <div class="alert__message success">
+            <div class="alert-msg success">
               <p>
                 <?= $_SESSION['delete-post-success'];
                 unset($_SESSION['delete-post-success']);
@@ -44,7 +44,7 @@ $posts = mysqli_query($connection, $query);
               </p>
             </div>
           <?php elseif (isset($_SESSION['delete-post'])): ?>
-            <div class="alert__message error">
+            <div class="alert-msg error">
               <p>
                 <?= $_SESSION['delete-post'];
                 unset($_SESSION['delete-post']);
@@ -52,7 +52,7 @@ $posts = mysqli_query($connection, $query);
               </p>
             </div>
           <?php elseif (isset($_SESSION['edit-post'])): ?>
-            <div class="alert__message error">
+            <div class="alert-msg error">
               <p>
                 <?= $_SESSION['edit-post'];
                 unset($_SESSION['edit-post']);
