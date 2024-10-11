@@ -1,6 +1,6 @@
 :root {
   --clr-primary: #121e2a;
-  --clr-secondary: rgb(226, 106, 106);
+  --clr-secondary: #e26a6a;
   --clr-tertiary: #d4ac47;
   --clr-text: #e9e2e2;
   --clr-background: #181620;
@@ -9,9 +9,11 @@
 
 
   --clr-warning: #f0cd77;
-  --clr-success: rgba(0, 255, 0, 0.3);
-  --clr-error: rgb(226, 106, 106);
-  --clr-info: rgb(66, 197, 248);
+  --clr-success: #02b302;
+  --clr-success-background: rgb(2, 179, 2, 0.25);
+  --clr-error: #cf0b0b;
+  --clr-error-background: rgb(207, 11, 11, 0.25);
+  --clr-info: #42c5f8;
 }
 
 body.dark {
@@ -237,7 +239,7 @@ body, html, .website-wrapper {
 
 /* Button Styles */
 .btn {
-  background-color: orange !important;
+  background-color: var(--clr-secondary) !important;
   color: var(--clr-white) !important;
   font-weight: bold !important;
   font-size: 1.6rem !important;
@@ -251,7 +253,7 @@ body, html, .website-wrapper {
 }
 
 .btn:hover {
-  filter: brightness(85%) !important;
+  filter: brightness(70%) !important;
 }
 
 .btn:focus, .btn:active {
@@ -338,7 +340,7 @@ body, html, .website-wrapper {
     margin: 0 auto;
     padding: 4rem;
     text-align: center;
-    min-width: 40%;
+    min-width: 50%;
 }
 
 .sign-section form {
@@ -379,13 +381,13 @@ body, html, .website-wrapper {
 }
 
 .alert-msg.error{
-    background: #cb5959;
-    color: white;
+    background: var(--clr-error-background);
+    color: var(--clr-error);
 }
 
 .alert-msg.success {
-  background: lightgreen;
-  color: green;
+  background: var(--clr-success-background);
+  color: var(--clr-success);
 }
 
 .sign-container p{
