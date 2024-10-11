@@ -168,7 +168,7 @@ body, html, .website-wrapper {
 }
 
 .card {
-  border: 1px solid var(--clr-light-gray);
+  border: 1px solid var(--clr-background);
   border-radius: 0.4rem;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   transition: scale 300ms ease-in-out, box-shadow 300ms ease-in-out;
@@ -405,31 +405,50 @@ DASHBOARD
 
 .dashboard__container {
   display: grid;
-  grid-template-columns: 14rem auto;
+  grid-template-columns: 20rem auto;
   gap: 1rem;
-  background: var(--color-gray-900);
   padding: 2rem;
-  margin-bottom: 5rem;
+  border: 1px solid var(--clr-background);
+  border-radius: 0.4rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--clr-primary-card);
 }
 
-.dashboard aside a {
-  background: var(--color-primary);
+.dashboard__container aside {
+  margin: 0;
+}
+
+.dashboard a {
+  text-align: center;
+  background: var(--clr-secondary);
   display: flex;
-  gap: 1rem;
   align-items: center;
-  padding: 1.6rem;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+.dashboard aside h5 {
+  margin: 0.5rem;
+}
+
+.dashboard aside li {
+  width: 100%;
+}
+
+.dashboard aside ul {
+  list-style: none;
+  padding: 0;
 }
 
 .dashboard aside ul li:not(:last-child) a {
-  border-bottom: 1px solid var(--color-gray-900);
+  border-bottom: 1px solid var(--clr-background);
 }
 
 .dashboard aside a:hover {
-  background: var(--color-gray-700);
+  background: var(--clr-background);
 }
 
 .dashboard aside a.active {
-  background: var(--color-gray-900);
+  background: var(--clr-tertiary);
 }
 
 .dashboard main {
@@ -463,5 +482,6 @@ DASHBOARD
   cursor: default;
   transition: var(--transition);
 }
+
 
 
