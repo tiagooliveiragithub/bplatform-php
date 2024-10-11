@@ -74,6 +74,34 @@ h6 {
   font-size: 20px;
 }
 
+small {
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input,
+select,
+textarea {
+  padding: 1rem 1.2rem;
+  background: var(--clr-background);
+  border-radius: 1rem;
+  resize: none;
+  color: var(--clr-text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
 /* Main Layouts */
 
 body, html, .website-wrapper {
@@ -212,7 +240,6 @@ body, html, .website-wrapper {
 }
 
 .card-title {
-  font-size: 2rem;
   margin-top: 0;
   margin-bottom: 0.8rem;
 }
@@ -244,7 +271,7 @@ body, html, .website-wrapper {
   font-weight: bold !important;
   font-size: 1.6rem !important;
   border: none !important;
-  padding: 1rem 2rem !important;
+  padding: 0.8rem 1.4rem !important;
   border-radius: 0.4rem !important;
   cursor: pointer !important;
   transition: filter 300ms ease-in-out !important;
@@ -330,47 +357,22 @@ body, html, .website-wrapper {
 /* Sign In and Sign Up Menu*/
 
 .sign-section{
-    display: grid;
-    place-items: center;
-    height: 100vh;
-}
-
-.sign-container{
-    max-width: 120rem; /*1920px*/
-    margin: 0 auto;
-    padding: 4rem;
-    text-align: center;
-    min-width: 50%;
-}
-
-.sign-section form {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.sign-section input {
-  padding: 0.8rem 1.2rem;
-  background: var(--clr-background);
-  border-radius: 1rem;
-  resize: none;
-  color: var(--clr-text);
+.post-section{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 }
 
-.sign-section input:focus{
-  outline: none;
-}
-
-.sign-section .btn{
-  font-size: 1.2rem !important;
-  padding: 0.5rem !important;
-  border-radius: 1rem !important;
-}
-
-.sign-section small {
-  font-size: 0.9rem;
-  margin-top: 0.2rem;
-  display: block;
+.form-container{
+    max-width: 120rem; /*1920px*/
+    text-align: center;
+    min-width: 70%;
 }
 
 /* Alert Messages */
@@ -390,9 +392,8 @@ body, html, .website-wrapper {
   color: var(--clr-success);
 }
 
-.sign-container p{
+.form-container p{
   margin: 0.3rem;
-  font-size: 1rem;
 }
 /* 
 DASHBOARD
