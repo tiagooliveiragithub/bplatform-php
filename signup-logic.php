@@ -37,7 +37,8 @@ if (isset($_POST['submit'])) {
                 $_SESSION['signup'] = "Username or Email already exists";
             } else {
                 // Insert new user into the database
-                $insert_user_query = "INSERT INTO users (firstname, lastname, username, email, password, is_admin) VALUES ('$firstname', '$lastname', '$username', '$email', '$hashed_password', 0)";
+                $default_avatar = 'default-avatar.jpg';
+                $insert_user_query = "INSERT INTO users (firstname, lastname, username, email, password,avatar, is_admin) VALUES ('$firstname', '$lastname', '$username', '$email', '$hashed_password', '$default_avatar', 0)";
                 $insert_user_result = mysqli_query($connection, $insert_user_query);
 
                 if (!mysqli_errno($connection)) {
