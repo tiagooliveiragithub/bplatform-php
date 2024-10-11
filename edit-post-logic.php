@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
             $time = time();
             $thumbnail_name = $time . $thumbnail['name'];
             $thumbnail_tmp_name = $thumbnail['tmp_name'];
-            $thumbnail_destination_path = '../images/' . $thumbnail_name;
+            $thumbnail_destination_path = 'images/' . $thumbnail_name;
 
             // make sure file is an image 
             $allowed_files = ['jpg', 'jpeg', 'png'];
@@ -77,5 +77,5 @@ if (isset($_POST['submit'])) {
 }
 
 
-header('location: ' . WEBSITE_URL . 'dashboard/');
+header('location: ' . WEBSITE_URL . 'dashboard.php');
 die();
