@@ -253,11 +253,11 @@ body, html, .website-wrapper {
 }
 
 .btn:hover {
-  filter: brightness(70%) !important;
+  filter: brightness(85%) !important;
 }
 
 .btn:focus, .btn:active {
-  filter: brightness(70%) !important;
+  filter: brightness(85%) !important;
   box-shadow: 0 0 5px var(--clr-black) !important;
 } 
 

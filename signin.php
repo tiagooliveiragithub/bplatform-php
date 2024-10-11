@@ -43,6 +43,9 @@
   </div>
 </main>
 
+<?php
+include('pages/partials/footer.php');
+?>
 </body>
 
 </html>
