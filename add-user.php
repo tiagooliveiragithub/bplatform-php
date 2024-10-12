@@ -30,7 +30,7 @@ unset($_SESSION['add-user-data']);
                         <div class="form-container">
                             <h2>Add User</h2>
                             <?php if (isset($_SESSION['add-user'])): ?>
-                                <div class="alert__message error">
+                                <div class="alert-msg error">
                                     <p>
                                         <?= $_SESSION['add-user'];
                                         unset($_SESSION['add-user']);
@@ -44,7 +44,7 @@ unset($_SESSION['add-user-data']);
                                 <input type="text" name="lastname" value="<?= $lastname ?>" placeholder="Last Name">
                                 <input type="text" name="username" value="<?= $username ?>" placeholder="Username">
                                 <input type="email" name="email" value="<?= $email ?>" placeholder="Email">
-                                <input type="password" name="password" value="<?= $createpassword ?>"
+                                <input type="password" name="createpassword" value="<?= $createpassword ?>"
                                     placeholder="Create Passowrd">
                                 <input type="password" name="confirmpassword" value="<?= $confirmpassword ?>"
                                     placeholder="Confirm Passowrd">

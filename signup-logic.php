@@ -7,8 +7,8 @@ if (isset($_POST['submit'])) {
     $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $username = filter_var($_POST['username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $email = filter_var($_POST['email'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $password = filter_var($_POST['password'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $confirm_password = filter_var($_POST['confirm_password'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $createpassword = filter_var($_POST['createpassword'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $confirmpassword = filter_var($_POST['confirmpassword'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     // Validate input values
     if (!$firstname) {
@@ -19,15 +19,15 @@ if (isset($_POST['submit'])) {
         $_SESSION['signup'] = "Please insert your username";
     } elseif (!$email) {
         $_SESSION['signup'] = "Please insert your email";
-    } elseif (strlen($password) < 8 || strlen($confirm_password) < 8) {
+    } elseif (strlen($createpassword) < 8 || strlen($confirmpassword) < 8) {
         $_SESSION['signup'] = "Password should have more than 8 characters";
     } else {
         // Checking if passwords don't match
-        if ($password !== $confirm_password) {
+        if ($createpassword !== $confirmpassword) {
             $_SESSION['signup'] = "The passwords don't match";
         } else {
             // Hashing the password
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+            $hashed_password = password_hash($createpassword, PASSWORD_DEFAULT);
 
             // Checking if username or email already exists
             $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email'";

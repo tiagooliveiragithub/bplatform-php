@@ -132,3 +132,5 @@ $posts = mysqli_query($connection, $query);
   include('pages/partials/footer.php');
   ?>
 </body>
+
+</html>

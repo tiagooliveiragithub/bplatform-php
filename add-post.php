@@ -26,7 +26,7 @@ unset($_SESSION['add-post-data']);
                         <div class="form-container">
                             <h2>Add Post</h2>
                             <?php if (isset($_SESSION['add-post'])): ?>
-                                <div class="alert__message error">
+                                <div class="alert-msg error">
                                     <p>
                                         <?= $_SESSION['add-post'];
                                         unset($_SESSION['add-post']);

@@ -8,8 +8,8 @@ $firstname = $_SESSION['signup-data']['firstname'] ?? null;
 $lastname = $_SESSION['signup-data']['lastname'] ?? null;
 $username = $_SESSION['signup-data']['username'] ?? null;
 $email = $_SESSION['signup-data']['email'] ?? null;
-$password = $_SESSION['signup-data']['password'] ?? null;
-$confirm_password = $_SESSION['signup-data']['confirm_password'] ?? null;
+$createpassword = $_SESSION['signup-data']['createpassword'] ?? null;
+$confirmpassword = $_SESSION['signup-data']['confirmpassword'] ?? null;
 
 // delete signup data session 
 unset($_SESSION['signup-data']);
@@ -39,8 +39,8 @@ unset($_SESSION['signup-data']);
                 <input type="text" name="lastname" value="<?= $lastname ?>" placeholder="Last Name">
                 <input type="text" name="username" value="<?= $username ?>" placeholder="Username">
                 <input type="email" name="email" value="<?= $email ?>" placeholder="Email">
-                <input type="password" name="password" value="<?= $password ?>" placeholder="Password">
-                <input type="password" name="confirm_password" value="<?= $confirm_password ?>"
+                <input type="password" name="createpassword" value="<?= $createpassword ?>" placeholder="Password">
+                <input type="password" name="confirmpassword" value="<?= $confirmpassword ?>"
                   placeholder="Confirm Password">
                 <button type="submit" name="submit" class="btn">Sign Up</button>
                 <small>Already have an account? <a href="signin.php">Sign In</a></small>

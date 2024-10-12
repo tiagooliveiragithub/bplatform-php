@@ -24,19 +24,26 @@ if (isset($_GET['id'])) {
     include('pages/partials/header.php');
     ?>
 
-    <section class="form__section">
-        <div class="container form__section-container">
-            <h2>Edit Category</h2>
-            <form action="<?= WEBSITE_URL ?>edit-category-logic.php" method="POST">
-                <input type="hidden" name="id" value="<?= $category['id'] ?>">
-                <input type="text" name="title" value="<?= $category['title'] ?>" placeholder="Title">
-                <textarea rows="4" name="description"
-                    placeholder="Description"><?= $category['description'] ?></textarea>
-                <button type="submit" name="submit" class="btn">Update Category</button>
-            </form>
-        </div>
-    </section>
-
+    <div class="website-wrapper">
+        <main class="main-content section-wrapper">
+            <div class="section-content-wide">
+                <div class="section-gap">
+                    <div class="post-section">
+                        <div class="form-container">
+                            <h2>Edit Category</h2>
+                            <form action="<?= WEBSITE_URL ?>edit-category-logic.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $category['id'] ?>">
+                                <input type="text" name="title" value="<?= $category['title'] ?>" placeholder="Title">
+                                <textarea rows="4" name="description"
+                                    placeholder="Description"><?= $category['description'] ?></textarea>
+                                <button type="submit" name="submit" class="btn">Update Category</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
     <?php
     include('pages/partials/footer.php');
     ?>
