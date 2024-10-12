@@ -45,12 +45,12 @@ unset($_SESSION['add-post-data']);
                                 </select>
                                 <textarea rows="10" name="body" placeholder="Body"><?= $title ?></textarea>
                                 <?php if (isset($_SESSION['user_is_admin'])): ?>
-                                    <div class="form__control inline">
+                                    <div class="form-control inline">
                                         <input type="checkbox" name="is_featured" value="1" id="is_featured" checked>
                                         <label for="is_featured">Featured</label>
                                     </div>
                                 <?php endif ?>
-                                <div class="form__control">
+                                <div class="form-control">
                                     <label for="thumbnail">Add Thumbnail</label>
                                     <input type="file" name="thumbnail" id="thumbnail">
                                 </div>
