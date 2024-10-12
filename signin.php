@@ -49,6 +49,9 @@ unset($_SESSION['signin-data']);
         </main>
     </div>
 
+<?php
+include('pages/partials/footer.php');
+?>
 </body>
 
 </html>

@@ -52,6 +52,9 @@ unset($_SESSION['signup-data']);
     </main>
 </div>
 
+<?php
+include('pages/partials/footer.php');
+?>
 </body>
 
 </html>
