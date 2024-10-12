@@ -191,6 +191,16 @@ body, html, .website-wrapper {
   font-size: 35px;
 }
 
+/* Footer */
+.footer {
+  background: var(--clr-primary-card);
+  text-align: center;
+}
+
+.footer-btn {
+  margin: 1rem;
+}
+
 /* Card Grid */
 
 .card-grid {

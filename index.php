@@ -26,7 +26,7 @@ $posts = mysqli_query($connection, $query);
 
           <!-- show featured post if any exist  -->
           <?php if (mysqli_num_rows($featured_result) == 1): ?>
-            <h2 class="mt-base">Trending</h2>
+            <h2 class="mt-base">Main Post</h2>
             <section class="featured">
               <article class="card">
                 <div class="card-text-wrapper">
@@ -44,8 +44,12 @@ $posts = mysqli_query($connection, $query);
                   $author = mysqli_fetch_assoc($author_result);
                   ?>
                   <div class="card-featured-header">
-                    <a href="<?= WEBSITE_URL ?>category-posts.php?id=<?= $category['id'] ?>"><?= $category['title'] ?></a>
-                    <p style="margin: 0;"><?= date("M d, Y - H:i", strtotime($featured['date_time'])) ?></p>
+                    <a href="<?= WEBSITE_URL ?>category-posts.php?id=<?= $category['id'] ?>"><i
+                        class="fa-solid fa-tag"></i> <?= $category['title'] ?></a>
+
+                    <p style="margin: 0;"><i class="fa-solid fa-calendar-days"></i>
+                      <?= date("M d, Y - H:i", strtotime($featured['date_time'])) ?>
+                    </p>
                   </div>
                   <div class="card-title-wrapper">
                     <h2><a href="<?= WEBSITE_URL ?>post.php?id=<?= $featured['id'] ?>"><?= $featured['title'] ?></a>
@@ -60,7 +64,8 @@ $posts = mysqli_query($connection, $query);
                       <?= substr($featured['body'], 0, 200) ?>...
                     </p>
                   </div>
-                  <h5 style="margin: 0;"><?= "{$author['firstname']} {$author['lastname']}" ?></h5>
+                  <h5 style="margin: 0;"><i class="fa-solid fa-user"></i>
+                    <?= "{$author['firstname']} {$author['lastname']}" ?></h5>
                   <div class="card-actions">
                     <a class="card-action-link" href="<?= WEBSITE_URL ?>post.php?id=<?= $featured['id'] ?>">
                       <span>Read</span>
@@ -73,7 +78,7 @@ $posts = mysqli_query($connection, $query);
             </section>
           <?php endif ?>
 
-          <h2 class="mt-base">Articles</h2>
+          <h2 class="mt-base">Posts</h2>
 
           <div class="card-grid mt-base">
 
@@ -101,8 +106,9 @@ $posts = mysqli_query($connection, $query);
                       $author = mysqli_fetch_assoc($author_result);
                       ?>
                       <div>
-                        <h6><?= "{$author['firstname']} {$author['lastname']}" ?></h6>
-                        <small><?= date("M d, Y - H:i", strtotime($post['date_time'])) ?></small>
+                        <h6><i class="fa-solid fa-user"></i> <?= "{$author['firstname']} {$author['lastname']}" ?></h6>
+                        <small><i class="fa-solid fa-calendar-days"></i>
+                          <?= date("M d, Y - H:i", strtotime($post['date_time'])) ?></small>
                       </div>
                     </div>
 
@@ -120,11 +126,10 @@ $posts = mysqli_query($connection, $query);
         </div>
       </div>
     </main>
+    <?php
+    include('pages/partials/footer.php');
+    ?>
   </div>
-
-  <?php
-  include('pages/partials/footer.php');
-  ?>
 
 </body>
 
