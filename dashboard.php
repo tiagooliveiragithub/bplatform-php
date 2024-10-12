@@ -120,7 +120,7 @@ $posts = mysqli_query($connection, $query);
                   </tbody>
                 </table>
               <?php else: ?>
-                <div class="alert__message error">No posts found</div>
+                <div class="alert-msg error">No posts found</div>
               <?php endif ?>
             </main>
           </div>

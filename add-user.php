@@ -52,7 +52,7 @@ unset($_SESSION['add-user-data']);
                                     <option value="0">Author</option>
                                     <option value="1">Admin</option>
                                 </select>
-                                <div class="form__control">
+                                <div class="form-control">
                                     <label for="avatar">User Avatar</label>
                                     <input type="file" name="avatar" id="avatar">
                                 </div>

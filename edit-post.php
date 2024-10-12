@@ -43,11 +43,11 @@ if (isset($_GET['id'])) {
                                     <?php endwhile ?>
                                 </select>
                                 <textarea name="body" rows="10" placeholder="Body"><?= $post['body'] ?></textarea>
-                                <div class="form__controlcinline">
+                                <div class="form-control inline">
                                     <input type="checkbox" id="is_featured" name="is_featured" value="1" checked>
                                     <label for="is_featured">Featured</label>
                                 </div>
-                                <div class="form__control">
+                                <div class="form-control">
                                     <label for="thumbnail">Update Thumbnail</label>
                                     <input type="file" name="thumbnail" id="thumbnail">
                                 </div>
