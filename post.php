@@ -20,11 +20,18 @@ if (isset($_GET['id'])) {
   <main class="main-content section-wrapper">
     <div class="single-post-content section-content-narrow">
       <div class="single-post-gap section-gap">
+
+        <?php if (isset($post['thumbnail'])): ?>
+          <div class="single-post-cover pb-base">
+            <img loading="lazy" src="images/<?= $post['thumbnail'] ?>" alt="<?= $post['title'] ?>">
+          </div>
+        <?php endif; ?>
+
         <h2 class="single-post-title pb-base center">
           <?= $post['title'] ?>
         </h2>
 
-        <div class="post-meta pb-base">
+        <div class="post-meta">
           <div class="post-meta-item">
             <a class="post-meta-link" href="#">
               <i class="fa-solid fa-user"></i>
@@ -52,8 +59,8 @@ if (isset($_GET['id'])) {
           </div>
         </div>
 
-        <div class="single-post-content">
-          <?= $post['body'] ?>
+        <div class="single-post-content pb-base">
+          <pre><?= $post['body'] ?></pre>
         </div>
 
       </div>

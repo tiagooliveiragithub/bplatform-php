@@ -78,6 +78,10 @@ small {
   margin-top: 0.2rem;
 }
 
+pre {
+  margin: 0;
+}
+
 
 form {
   display: flex;
@@ -261,6 +265,12 @@ body, html, .website-wrapper {
 
 .card-action-link:hover {
   text-decoration: none;
+}
+
+.card-featured-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Button Styles */
