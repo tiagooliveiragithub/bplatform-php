@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('pages/partials/head.php');
+<?php include('partials/head.php');
 
 // get back form data if was any error 
 $firstname = $_SESSION['signup-data']['firstname'] ?? null;
@@ -53,7 +53,7 @@ unset($_SESSION['signup-data']);
 </div>
 
 <?php
-include('pages/partials/footer.php');
+include('partials/footer.php');
 ?>
 </body>
 

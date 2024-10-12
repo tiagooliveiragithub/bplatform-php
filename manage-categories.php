@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-include('pages/partials/head.php');
+include('partials/head.php');
 // fetch categories from db 
 $query = "SELECT * FROM categories ORDER BY title";
 $categories = mysqli_query($connection, $query);
@@ -11,7 +11,7 @@ $categories = mysqli_query($connection, $query);
 
 <body>
     <?php
-    include('pages/partials/header.php');
+    include('partials/header.php');
     ?>
     <div class="website-wrapper">
         <main class="main-content section-wrapper">
@@ -113,7 +113,7 @@ $categories = mysqli_query($connection, $query);
     </div>
 
     <?php
-    include('pages/partials/footer.php');
+    include('partials/footer.php');
     ?>
 </body>
 

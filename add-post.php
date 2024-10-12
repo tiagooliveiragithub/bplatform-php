@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-include('pages/partials/head.php');
+include('partials/head.php');
 
 $query = "SELECT * FROM categories";
 $categories = mysqli_query($connection, $query);
@@ -15,7 +15,7 @@ unset($_SESSION['add-post-data']);
 
 <body>
     <?php
-    include('pages/partials/header.php');
+    include('partials/header.php');
     ?>
 
     <div class="website-wrapper">
@@ -65,7 +65,7 @@ unset($_SESSION['add-post-data']);
 
 
     <?php
-    include('pages/partials/footer.php');
+    include('partials/footer.php');
     ?>
 
 </body>

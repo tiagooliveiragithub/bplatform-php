@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-include('pages/partials/head.php');
+include('partials/head.php');
 
 // fetch currents user posts from db 
 $current_user_id = $_SESSION['user-id'];
@@ -13,7 +13,7 @@ $posts = mysqli_query($connection, $query);
 
 <body>
   <?php
-  include('pages/partials/header.php');
+  include('partials/header.php');
   ?>
   <div class="website-wrapper">
     <main class="main-content section-wrapper">
@@ -129,7 +129,7 @@ $posts = mysqli_query($connection, $query);
   </div>
 
   <?php
-  include('pages/partials/footer.php');
+  include('partials/footer.php');
   ?>
 </body>
 

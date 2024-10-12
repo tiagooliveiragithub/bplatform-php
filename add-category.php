@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-include('pages/partials/head.php');
+include('partials/head.php');
 
 // get back form data if was any error 
 $title = $_SESSION['add-category-data']['title'] ?? null;
@@ -15,7 +15,7 @@ unset($_SESSION['add-category-data']);
 
 <body>
     <?php
-    include('pages/partials/header.php');
+    include('partials/header.php');
     ?>
 
     <div class="website-wrapper">
@@ -49,7 +49,7 @@ unset($_SESSION['add-category-data']);
 
 
     <?php
-    include('pages/partials/footer.php');
+    include('partials/footer.php');
     ?>
 
 </body>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-include('pages/partials/head.php');
+include('partials/head.php');
 
 if (isset($_GET['id'])) {
   $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
 
 <body>
   <?php
-  include('pages/partials/header.php');
+  include('partials/header.php');
   ?>
   <main class="main-content section-wrapper">
     <div class="single-post-content section-content-narrow">
@@ -78,7 +78,7 @@ if (isset($_GET['id'])) {
 
 
   <?php
-  include('pages/partials/footer.php');
+  include('partials/footer.php');
   ?>
 
 </body>

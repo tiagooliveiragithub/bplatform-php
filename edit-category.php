@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-include('pages/partials/head.php');
+include('partials/head.php');
 
 if (isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
@@ -21,7 +21,7 @@ if (isset($_GET['id'])) {
 
 <body>
     <?php
-    include('pages/partials/header.php');
+    include('partials/header.php');
     ?>
 
     <div class="website-wrapper">
@@ -45,7 +45,7 @@ if (isset($_GET['id'])) {
         </main>
     </div>
     <?php
-    include('pages/partials/footer.php');
+    include('partials/footer.php');
     ?>
 
 </body>

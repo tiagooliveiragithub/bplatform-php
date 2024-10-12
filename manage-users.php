@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-include('pages/partials/head.php');
+include('partials/head.php');
 
 // fetch users from db not us 
 $current_admin_id = $_SESSION['user-id'];
@@ -14,7 +14,7 @@ $users = mysqli_query($connection, $query);
 
 <body>
     <?php
-    include('pages/partials/header.php');
+    include('partials/header.php');
     ?>
     <div class="website-wrapper">
         <main class="main-content section-wrapper">
@@ -123,7 +123,7 @@ $users = mysqli_query($connection, $query);
     </div>
 
     <?php
-    include('pages/partials/footer.php');
+    include('partials/footer.php');
     ?>
 </body>
 

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-include('pages/partials/head.php');
+include('partials/head.php');
 
 $category_query = "SELECT * FROM categories";
 $categories = mysqli_query($connection, $category_query);
@@ -22,7 +22,7 @@ if (isset($_GET['id'])) {
 
 <body>
     <?php
-    include('pages/partials/header.php');
+    include('partials/header.php');
     ?>
 
     <div class="website-wrapper">
@@ -30,7 +30,7 @@ if (isset($_GET['id'])) {
             <div class="section-content-wide">
                 <div class="section-gap">
                     <div class="post-section">
-                        <div class="form-container">
+                        <div class="sign-container">
                             <h2>Edit Post</h2>
                             <form action="<?= WEBSITE_URL ?>edit-post-logic.php" enctype="multipart/form-data"
                                 method="POST">
@@ -62,7 +62,7 @@ if (isset($_GET['id'])) {
 
 
     <?php
-    include('pages/partials/footer.php');
+    include('partials/footer.php');
     ?>
 
 </body>

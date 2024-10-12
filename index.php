@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-include('pages/partials/head.php');
+include('partials/head.php');
 
 // fetch featured post from db 
 $featured_query = "SELECT * FROM posts WHERE is_featured=1";
@@ -17,7 +17,7 @@ $posts = mysqli_query($connection, $query);
 
 <body>
   <?php
-  include('pages/partials/header.php');
+  include('partials/header.php');
   ?>
   <div class="website-wrapper">
     <main class="main-content section-wrapper">
@@ -127,7 +127,7 @@ $posts = mysqli_query($connection, $query);
       </div>
     </main>
     <?php
-    include('pages/partials/footer.php');
+    include('partials/footer.php');
     ?>
   </div>
 

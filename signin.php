@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('pages/partials/head.php');
+<?php include('partials/head.php');
 
 $username_email = $_SESSION['signin-data']['username_email'] ?? null;
 $password = $_SESSION['signin-data']['password'] ?? null;
@@ -49,9 +49,9 @@ unset($_SESSION['signin-data']);
         </main>
     </div>
 
-<?php
-include('pages/partials/footer.php');
-?>
+    <?php
+    include('partials/footer.php');
+    ?>
 </body>
 
 </html>
