@@ -74,8 +74,11 @@ h6 {
 }
 
 small {
-  font-size: 0.9rem;
-  margin-top: 0.2rem;
+  font-size: 17px;
+}
+
+pre {
+  margin: 0;
 }
 
 
@@ -261,6 +264,12 @@ body, html, .website-wrapper {
 
 .card-action-link:hover {
   text-decoration: none;
+}
+
+.card-featured-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Button Styles */
