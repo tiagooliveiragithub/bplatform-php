@@ -6,6 +6,8 @@ include('pages/partials/head.php');
 
 if (isset($_GET['id'])) {
   $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
+  $query_views = "UPDATE posts SET views = views + 1 WHERE id=$id";
+  mysqli_query($connection, $query_views);
   $query = "SELECT * FROM posts WHERE id=$id";
   $result = mysqli_query($connection, $query);
   $post = mysqli_fetch_assoc($result);
@@ -44,7 +46,7 @@ if (isset($_GET['id'])) {
                   $author_result = mysqli_query($connection, $author_query);
                   $author = mysqli_fetch_assoc($author_result);
                   ?>
-                  <h5><?= "{$author['firstname']} {$author['lastname']}" ?></h5>
+                  <h6><?= "{$author['firstname']} {$author['lastname']}" ?></h6>
                 </div>
               </span>
             </a>
@@ -53,7 +55,15 @@ if (isset($_GET['id'])) {
             <span class="post-meta-link">
               <i class="fa-solid fa-calendar-days"></i>
               <span>
-                <small><?= date("M d, Y - H:i", strtotime($post['date_time'])) ?></small>
+                <h6><?= date("M d, Y - H:i", strtotime($post['date_time'])) ?></h6>
+              </span>
+            </span>
+          </div>
+          <div class="post-meta-item">
+            <span class="post-meta-link">
+              <i class="fa-solid fa-eye"></i>
+              <span>
+                <h6><?= $post['views'] ?></h6>
               </span>
             </span>
           </div>
