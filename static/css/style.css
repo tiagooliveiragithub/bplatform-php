@@ -517,5 +517,30 @@ DASHBOARD
   transition: var(--transition);
 }
 
+/* Password Inputs */
+.password-input{
+  position: relative;
+}
+.password-input input {
+  width: 100%;
+  padding-right: 3rem;
+}
+
+.password-input i {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.password-input input:focus {
+  outline: none;
+}
+
+.password-input i:hover {
+  color: var(--clr-secondary);
+}
+
 
 
