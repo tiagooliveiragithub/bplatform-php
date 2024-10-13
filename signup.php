@@ -39,9 +39,17 @@ unset($_SESSION['signup-data']);
                 <input type="text" name="lastname" value="<?= $lastname ?>" placeholder="Last Name">
                 <input type="text" name="username" value="<?= $username ?>" placeholder="Username">
                 <input type="email" name="email" value="<?= $email ?>" placeholder="Email">
-                <input type="password" name="createpassword" value="<?= $createpassword ?>" placeholder="Password">
-                <input type="password" name="confirmpassword" value="<?= $confirmpassword ?>"
-                  placeholder="Confirm Password">
+                <div class="password-input">
+                  <input type="password" id="createpassword" name="createpassword" value="<?= $createpassword ?>"
+                    placeholder="Password">
+                  <i class="fa fa-eye" id="toggleCreatePassword"></i>
+                </div>
+
+                <div class="password-input">
+                  <input type="password" id="confirmpassword" name="confirmpassword" value="<?= $confirmpassword ?>"
+                    placeholder="Confirm Password">
+                  <i class="fa fa-eye" id="toggleConfirmPassword"></i>
+                </div>
                 <button type="submit" name="submit" class="btn">Sign Up</button>
                 <small>Already have an account? <a href="signin.php">Sign In</a></small>
               </form>
