@@ -50,7 +50,7 @@ unset($_SESSION['signin-data']);
     </div>
 
     <?php
-    include('partials/footer.php');
+    include('partials/scripts.php');
     ?>
 </body>
 

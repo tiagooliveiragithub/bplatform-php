@@ -53,7 +53,7 @@ unset($_SESSION['signup-data']);
 </div>
 
 <?php
-include('partials/footer.php');
+include('partials/scripts.php');
 ?>
 </body>
 

@@ -32,6 +32,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+input {
+  font-size: 20px;
+}
+
 a {
   color: var(--clr-text);
   text-decoration: none;
@@ -310,7 +314,7 @@ body, html, .website-wrapper {
   box-shadow: 0 0 5px var(--clr-black) !important;
 } 
 
-  .btn-delete {
+.btn-delete {
   background: var(--clr-error) !important;
 }
 
@@ -321,12 +325,6 @@ body, html, .website-wrapper {
 
 .single-post-title, .single-post-excerpt {
   margin: 0;
-}
-
-.single-post-excerpt {
-  color: var(--clr-gray);
-  font-size: 2rem;
-  font-style: italic;
 }
 
 /* Post Meta */
