@@ -36,54 +36,53 @@ if (isset($_GET['id'])) {
           <h2 class='mt-base'><?= $category_title ?></h2>
 
           <?php if (mysqli_num_rows($posts) > 0): ?>
-            <div class="card-grid mt-base">
 
+            <div class="card-grid mt-base">
               <?php while ($post = mysqli_fetch_assoc($posts)): ?>
                 <article class="card">
-                  <div class="card-text-wrapper">
-                    <div class="card-title-wrapper">
-                      <h2 class="card-title">
-                        <a href="<?= WEBSITE_URL ?>post.php?id=<?= $post['id'] ?>" class="card-title-link">
-                          <?= $post['title'] ?>
-                        </a>
-                      </h2>
-                    </div>
-                    <div class="card-content-wrapper">
-                      <p class="card-content">
-                        <?= substr($post['body'], 0, 120) ?>...
-                      </p>
+                  <div class="card-gap">
+                    <h2>
+                      <a href="<?= WEBSITE_URL ?>post.php?id=<?= $post['id'] ?>" class="card-title-link">
+                        <?= $post['title'] ?>
+                      </a>
+                    </h2>
+                    <p>
+                      <?= substr($post['body'], 0, 120) ?>...
+                    </p>
+                    <?php
+                    // fetch author using author_id 
+                    $author_id = $post['author_id'];
+                    $author_query = "SELECT * FROM users WHERE id=$author_id";
+                    $author_result = mysqli_query($connection, $author_query);
+                    $author = mysqli_fetch_assoc($author_result);
+                    ?>
+                    <h6>
+                      <i class="fa-solid fa-user"></i>
+                      <?= "{$author['firstname']} {$author['lastname']}" ?>
+                    </h6>
+                    <small>
+                      <i class="fa-solid fa-calendar-days"></i>
+                      <?= date("M d, Y - H:i", strtotime($post['date_time'])) ?>
+                    </small>
 
-                      <div class="">
-                        <?php
-                        // fetch author using author_id 
-                        $author_id = $post['author_id'];
-                        $author_query = "SELECT * FROM users WHERE id=$author_id";
-                        $author_result = mysqli_query($connection, $author_query);
-                        $author = mysqli_fetch_assoc($author_result);
-                        ?>
-                        <div>
-                          <h6><i class="fa-solid fa-user"></i> <?= "{$author['firstname']} {$author['lastname']}" ?></h6>
-                          <small><i class="fa-solid fa-calendar-days"></i>
-                            <?= date("M d, Y - H:i", strtotime($post['date_time'])) ?></small>
-                        </div>
-                      </div>
-
-                      <div class="card-actions">
-                        <a class="card-action-link" href="<?= WEBSITE_URL ?>post.php?id=<?= $post['id'] ?>">
-                          <span>Read</span>
-                          <i class="fa-solid fa-circle-arrow-right"></i>
-                        </a>
-                      </div>
+                    <div class="card-actions">
+                      <a class="card-action-link" href="<?= WEBSITE_URL ?>post.php?id=<?= $post['id'] ?>">
+                        <span>Read</span>
+                        <i class="fa-solid fa-circle-arrow-right"></i>
+                      </a>
                     </div>
                   </div>
                 </article>
               <?php endwhile ?>
             </div>
+
           <?php else: ?>
             <div class="alert-msg error">
               <p>No posts found for this category</p>
             </div>
           <?php endif ?>
+
+
         </div>
       </div>
     </main>
