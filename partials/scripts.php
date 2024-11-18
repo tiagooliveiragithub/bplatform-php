@@ -1,3 +1,4 @@
+<!-- Theme Switcher -->
 <script>
   const themeToggleButton = document.getElementById('theme-toggle');
   const themeIcon = document.getElementById('theme-icon');
@@ -29,6 +30,7 @@
   });
 </script>
 
+<!-- Password Toggle -->
 <script>
   document.getElementById('toggleCreatePassword').addEventListener('click', function () {
     const passwordField = document.getElementById('createpassword');
@@ -62,7 +64,6 @@
 </script>
 
 <script>
-
   document.getElementById('togglePassword').addEventListener('click', function () {
     const passwordField = document.getElementById('password');
     const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';

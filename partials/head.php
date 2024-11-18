@@ -1,5 +1,5 @@
 <?php
-require 'database.php';
+require '../database.php';
 
 // fetch current user from db  
 if (isset($_SESSION['user-id'])) {
@@ -14,9 +14,9 @@ if (isset($_SESSION['user-id'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Project</title>
-  <link rel="stylesheet" href="static/css/remedy.css">
-  <link rel="stylesheet" href="static/css/style.css">
+  <title>BPlatform</title>
+  <link rel="stylesheet" href="../static/css/remedy.css">
+  <link rel="stylesheet" href="../static/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"

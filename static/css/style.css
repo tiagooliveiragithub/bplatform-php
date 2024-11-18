@@ -44,7 +44,7 @@ a {
 
 a:hover {
   color: var(--clr-secondary);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Headings */
@@ -203,12 +203,16 @@ body, html, .website-wrapper {
 
 /* Card Grid */
 
-.card-grid h2 {
+.card h2 {
+  margin: 2rem 0;
+}
+
+.card h6 {
   margin: 0;
 }
 
-.card-grid h6 {
-  margin: 0;
+.featured i, .featured span, .featured {
+  font-size: 2rem;
 }
 
 .card-grid {
