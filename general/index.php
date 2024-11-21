@@ -9,7 +9,7 @@ $featured_query = "SELECT * FROM posts WHERE is_featured=1";
 $featured_result = mysqli_query($connection, $featured_query);
 $featured = mysqli_fetch_assoc($featured_result);
 
-// fetch 9 posts from db 
+// fetch 4 posts from db 
 $query = "SELECT * FROM posts ORDER BY date_time DESC LIMIT 4";
 $posts = mysqli_query($connection, $query);
 
@@ -56,7 +56,7 @@ $posts = mysqli_query($connection, $query);
                   </a>
                 </h2>
                 <?php if (isset($featured['thumbnail'])): ?>
-                  <a href="<?= WEBSITE_URL ?>general/post.php?id=<?= $category['id'] ?>">
+                  <a href="<?= WEBSITE_URL ?>general/post.php?id=<?= $featured['id'] ?>">
                     <img loading="lazy" class="card-cover" src="<?= WEBSITE_URL ?>images/<?= $featured['thumbnail'] ?>"
                       alt="<?= $featured['title'] ?>">
                   </a>

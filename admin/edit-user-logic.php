@@ -5,7 +5,7 @@ require '../database.php';
 $id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
 $firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-$is_admin = filter_var($_POST['userrole'], FILTER_SANITIZE_NUMBER_INT);
+$user_type = filter_var($_POST['userrole'], FILTER_SANITIZE_NUMBER_INT);
 
 // check for valid input 
 if (!$firstname) {
@@ -14,7 +14,7 @@ if (!$firstname) {
     $_SESSION['edit-user'] = "Insert a last name please";
 } else {
     // update user 
-    $query = "UPDATE users SET firstname='$firstname', lastname='$lastname', is_admin=$is_admin WHERE id=$id LIMIT 1";
+    $query = "UPDATE users SET firstname='$firstname', lastname='$lastname', user_type=$user_type WHERE id=$id LIMIT 1";
     $result = mysqli_query($connection, $query);
 
     if (mysqli_errno($connection)) {

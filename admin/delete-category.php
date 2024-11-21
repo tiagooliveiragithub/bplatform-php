@@ -1,6 +1,9 @@
 <?php
 require '../database.php';
 
+$permission = 'admin';
+include('partials/permission.php');
+
 if (isset($_GET['id'])) {
 
     // fetch category from db 

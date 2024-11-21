@@ -5,6 +5,9 @@
 <?php
 include('../partials/head.php');
 
+$permission = 'admin';
+include('partials/permission.php');
+
 if (isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
     $query = "SELECT * FROM users WHERE id=$id";
@@ -42,8 +45,9 @@ if (isset($_GET['id'])) {
                                 <input type="text" value="<?= $user['lastname'] ?>" name="lastname"
                                     placeholder="Last Name">
                                 <select name="userrole">
-                                    <option value="0">Author</option>
-                                    <option value="1">Admin</option>
+                                    <option value="0">Viewer</option>
+                                    <option value="1">Author</option>
+                                    <option value="2">Admin</option>
                                 </select>
                                 <button type="submit" name="submit" class="btn">Update User</button>
                             </form>

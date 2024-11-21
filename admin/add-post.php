@@ -4,6 +4,9 @@
 <?php
 include('../partials/head.php');
 
+$permission = 'author';
+include('partials/permission.php');
+
 $query = "SELECT * FROM categories";
 $categories = mysqli_query($connection, $query);
 
@@ -43,7 +46,7 @@ unset($_SESSION['add-post-data']);
                                     <?php endwhile ?>
                                 </select>
                                 <textarea rows="10" name="body" placeholder="Body"><?= $title ?></textarea>
-                                <?php if (isset($_SESSION['user_is_admin'])): ?>
+                                <?php if (isset($_SESSION['user_type']) == true && $_SESSION['user_type'] == "admin"): ?>
                                     <div class="form-control inline">
                                         <input type="checkbox" name="is_featured" value="1" id="is_featured" checked>
                                         <label for="is_featured">Featured</label>

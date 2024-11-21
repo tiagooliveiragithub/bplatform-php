@@ -1,6 +1,9 @@
 <?php
 require '../database.php';
 
+$permission = 'author';
+include('partials/permission.php');
+
 if (isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
 

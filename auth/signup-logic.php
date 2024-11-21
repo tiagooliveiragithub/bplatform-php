@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
             } else {
                 // Insert new user into the database
                 $default_avatar = '../images/default-avatar.png';
-                $insert_user_query = "INSERT INTO users (firstname, lastname, username, email, password,avatar, is_admin) VALUES ('$firstname', '$lastname', '$username', '$email', '$hashed_password', '$default_avatar', 0)";
+                $insert_user_query = "INSERT INTO users (firstname, lastname, username, email, password,avatar, user_type) VALUES ('$firstname', '$lastname', '$username', '$email', '$hashed_password', '$default_avatar', 0)";
                 $insert_user_result = mysqli_query($connection, $insert_user_query);
 
                 if (!mysqli_errno($connection)) {

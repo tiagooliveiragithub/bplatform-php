@@ -46,6 +46,6 @@
 
 <?php else: ?>
   <div class="alert-msg error">
-    <p>No posts found for this category</p>
+    <p>No posts found</p>
   </div>
 <?php endif ?>

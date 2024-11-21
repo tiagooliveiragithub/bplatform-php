@@ -9,7 +9,7 @@
     <li><a href="<?= WEBSITE_URL ?>admin/manage-posts.php"><i class="uil uil-postcard"></i>
         <h5>Manage Post</h5>
       </a></li>
-    <?php if (isset($_SESSION['user_is_admin'])): ?>
+    <?php if ((isset($_SESSION['user_type']) == true) && ($_SESSION['user_type'] == "admin")): ?>
       <li><a href="<?= WEBSITE_URL ?>admin/add-user.php"><i class="uil uil-user"></i>
           <h5>Add User</h5>
         </a></li>

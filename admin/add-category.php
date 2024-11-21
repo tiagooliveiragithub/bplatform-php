@@ -4,6 +4,9 @@
 <?php
 include('../partials/head.php');
 
+$permission = 'admin';
+include('partials/permission.php');
+
 // get back form data if was any error 
 $title = $_SESSION['add-category-data']['title'] ?? null;
 $description = $_SESSION['add-category-data']['description'] ?? null;
@@ -33,7 +36,7 @@ unset($_SESSION['add-category-data']);
                                     </p>
                                 </div>
                             <?php endif ?>
-                            <form action="<?= WEBSITE_URL ?>add-category-logic.php" method="POST">
+                            <form action="<?= WEBSITE_URL ?>admin/add-category-logic.php" method="POST">
                                 <input type="text" name="title" value="<?= $title ?>" placeholder="Title">
                                 <textarea rows="4" name="description"
                                     placeholder="Description"><?= $description ?></textarea>

@@ -4,6 +4,9 @@
 <?php
 include('../partials/head.php');
 
+$permission = 'author';
+include('partials/permission.php');
+
 $category_query = "SELECT * FROM categories";
 $categories = mysqli_query($connection, $category_query);
 

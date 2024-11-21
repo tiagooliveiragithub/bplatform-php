@@ -3,9 +3,15 @@
 
 <?php
 include('../partials/head.php');
+
+$permission = 'admin';
+include('partials/permission.php');
+
 // fetch categories from db 
 $query = "SELECT * FROM categories ORDER BY title";
 $categories = mysqli_query($connection, $query);
+
+
 
 ?>
 
@@ -16,10 +22,10 @@ $categories = mysqli_query($connection, $query);
     <div class="website-wrapper">
         <main class="main-content section-wrapper">
             <div class="section-content-wide">
-                <?php
-                include('partials/messages-posts.php');
-                ?>
                 <section class="dashboard">
+                    <?php
+                    include('partials/messages-categories.php');
+                    ?>
                     <div class="container dashboard__container">
                         <?php
                         include('partials/side-menu.php');

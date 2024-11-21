@@ -24,8 +24,10 @@ if (isset($_POST['submit'])) {
                 // set session for access control 
                 $_SESSION['user-id'] = $user_record['id'];
                 // set session if user is an admin 
-                if ($user_record['is_admin'] == 1) {
-                    $_SESSION['user_is_admin'] = true;
+                if ($user_record['user_type'] == 2) {
+                    $_SESSION['user_type'] = "admin";
+                } elseif ($user_record['user_type'] == 1) {
+                    $_SESSION['user_type'] = "author";
                 }
                 // log user in 
                 header('location: ' . WEBSITE_URL . 'general/index.php');

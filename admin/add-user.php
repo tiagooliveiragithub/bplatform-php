@@ -4,6 +4,9 @@
 <?php
 include('../partials/head.php');
 
+$permission = 'admin';
+include('partials/permission.php');
+
 // get back form data if was any error 
 $firstname = $_SESSION['add-user-data']['firstname'] ?? null;
 $lastname = $_SESSION['add-user-data']['lastname'] ?? null;
@@ -48,8 +51,9 @@ unset($_SESSION['add-user-data']);
                                 <input type="password" name="confirmpassword" value="<?= $confirmpassword ?>"
                                     placeholder="Confirm Passowrd">
                                 <select name="userrole">
-                                    <option value="0">Author</option>
-                                    <option value="1">Admin</option>
+                                    <option value="0">Viewer</option>
+                                    <option value="1">Author</option>
+                                    <option value="2">Admin</option>
                                 </select>
                                 <div class="form-control">
                                     <label for="avatar">User Avatar</label>

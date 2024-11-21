@@ -4,6 +4,9 @@
 <?php
 include('../partials/head.php');
 
+$permission = 'admin';
+include('partials/permission.php');
+
 // fetch users from db not us 
 $current_admin_id = $_SESSION['user-id'];
 
@@ -37,7 +40,7 @@ $users = mysqli_query($connection, $query);
                                             <th>Username</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
-                                            <th>Admin</th>
+                                            <th>Type</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -49,7 +52,13 @@ $users = mysqli_query($connection, $query);
                                                         class="btn sm">Edit</a></td>
                                                 <td><a href="<?= WEBSITE_URL ?>admin/delete-user.php?id=<?= $user['id'] ?>"
                                                         class="btn sm danger">Delete</a></td>
-                                                <td><?= $user['is_admin'] ? 'Yes' : 'No' ?></td>
+                                                <?php if ($user['user_type'] == 2): ?>
+                                                    <td>Admin</td>
+                                                <?php elseif ($user['user_type'] == 1): ?>
+                                                    <td>Author</td>
+                                                <?php else: ?>
+                                                    <td>User</td>
+                                                <?php endif ?>
                                             </tr>
                                         <?php endwhile ?>
                                     </tbody>

@@ -7,11 +7,15 @@
       <ul class="menu-items">
         <?php if (isset($_SESSION['user-id'])): ?>
           <li class="menu-item">
-            <a href="<?= WEBSITE_URL ?>admin/manage-posts.php" class="menu-link"><i class="fa-solid fa-user"></i></a>
-          </li>
-          <li class="menu-item">
             <a href="<?= WEBSITE_URL ?>auth/signout.php" class="menu-link"><i class="fa-solid fa-sign-out"></i></a>
-          <?php else: ?>
+          </li>
+
+          <?php if ((isset($_SESSION['user_type']) == true) && ($_SESSION['user_type'] == "admin" || $_SESSION['user_type'] == "author")): ?>
+            <li class="menu-item">
+              <a href="<?= WEBSITE_URL ?>admin/manage-posts.php" class="menu-link"><i class="fa-solid fa-user"></i></a>
+            </li>
+          <?php endif ?>
+        <?php else: ?>
           <li class="menu-item">
             <a href="<?= WEBSITE_URL ?>auth/signin.php" class="menu-link"><i class="fa-solid fa-user"></i></a>
           </li>

@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $createpassword = filter_var($_POST['createpassword'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $confirmpassword = filter_var($_POST['confirmpassword'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $is_admin = filter_var($_POST['userrole'], FILTER_SANITIZE_NUMBER_INT);
+    $user_type = filter_var($_POST['userrole'], FILTER_SANITIZE_NUMBER_INT);
     $avatar = $_FILES['avatar'];
 
     // validate input values 
@@ -39,28 +39,6 @@ if (isset($_POST['submit'])) {
             $user_check_result = mysqli_query($connection, $user_check_query);
             if (mysqli_num_rows($user_check_result) > 0) {
                 $_SESSION['add-user'] = "Username or Email already exist";
-            } else {
-                // working on avatar
-                $time = time();
-                $avatar_name = $time . $avatar['name'];
-                $avatar_tmp_name = $avatar['tmp_name'];
-                $avatar_destination_path = '../images/' . $avatar_name;
-
-                // make sure file is an image 
-                $allowed_files = ['png', 'jpg', 'jpeg'];
-                $extention = explode('.', $avatar_name);
-                $extention = end($extention);
-
-                if (in_array($extention, $allowed_files)) {
-                    // check if the size of avatar isnt bigger than 1mb 
-                    if ($avatar['size'] < 1000000) {
-                        move_uploaded_file($avatar_tmp_name, $avatar_destination_path);
-                    } else {
-                        $_SESSION['add-user'] = "File size is too large (1MB max).";
-                    }
-                } else {
-                    $_SESSION['add-user'] = "File should be a image (jpg, jpeg, png).";
-                }
             }
         }
     }
@@ -71,7 +49,7 @@ if (isset($_POST['submit'])) {
         header('location: ' . WEBSITE_URL . 'admin/add-user.php');
         die();
     } else {
-        $insert_user_query = "INSERT INTO users (firstname, lastname, username, email, password, avatar, is_admin) VALUES ('$firstname', '$lastname', '$username', '$email', '$hased_password', '$avatar_name', '$is_admin')";
+        $insert_user_query = "INSERT INTO users (firstname, lastname, username, email, password, avatar, user_type) VALUES ('$firstname', '$lastname', '$username', '$email', '$hased_password', '$avatar_name', '$user_type')";
         $insert_user_result = mysqli_query($connection, $insert_user_query);
 
         if (!mysqli_errno($connection)) {
