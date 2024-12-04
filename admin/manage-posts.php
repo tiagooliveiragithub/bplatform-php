@@ -34,7 +34,7 @@ $posts = mysqli_query($connection, $query);
             <?php
             include('partials/side-menu.php');
             ?>
-            <main>
+            <div class="dashboard-main">
               <h2>Manage Posts</h2>
               <?php if (mysqli_num_rows($posts) > 0): ?>
                 <table>
@@ -47,8 +47,9 @@ $posts = mysqli_query($connection, $query);
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <?php while ($post = mysqli_fetch_assoc($posts)): ?>
+                    <?php while ($post = mysqli_fetch_assoc($posts)): ?>
+                      <tr>
+
                         <!-- getting category title for each post  -->
                         <?php
                         $category_id = $post['category_id'];
@@ -69,7 +70,7 @@ $posts = mysqli_query($connection, $query);
               <?php else: ?>
                 <div class="alert-msg error">No posts found</div>
               <?php endif ?>
-            </main>
+            </div>
           </div>
         </section>
       </div>

@@ -80,7 +80,6 @@ $posts = mysqli_query($connection, $query);
                 </div>
               </div>
             </article>
-            </section>
           <?php endif ?>
 
           <h2 class="mt-base">Recent Posts</h2>

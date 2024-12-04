@@ -45,10 +45,12 @@ if (isset($_GET['id'])) {
                                     <?php endwhile ?>
                                 </select>
                                 <textarea name="body" rows="10" placeholder="Body"><?= $post['body'] ?></textarea>
-                                <div class="form-control inline">
-                                    <input type="checkbox" id="is_featured" name="is_featured" value="1" checked>
-                                    <label for="is_featured">Featured</label>
-                                </div>
+                                <?php if (isset($_SESSION['user_type']) == true && $_SESSION['user_type'] == "admin"): ?>
+                                    <div class="form-control inline">
+                                        <input type="checkbox" id="is_featured" name="is_featured" value="1" checked>
+                                        <label for="is_featured">Featured</label>
+                                    </div>
+                                <?php endif ?>
                                 <div class="form-control">
                                     <label for="thumbnail">Update Thumbnail</label>
                                     <input type="file" name="thumbnail" id="thumbnail">

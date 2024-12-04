@@ -14,9 +14,9 @@ $confirmpassword = $_SESSION['signup-data']['confirmpassword'] ?? null;
 // delete signup data session 
 unset($_SESSION['signup-data']);
 ?>
-<div class="website-wrapper">
 
-  <body>
+<body>
+  <div class="website-wrapper">
     <main class="main-content section-wrapper">
       <div class="section-content-wide">
         <div class="section-gap">
@@ -58,11 +58,11 @@ unset($_SESSION['signup-data']);
         </div>
       </div>
     </main>
-</div>
+  </div>
 
-<?php
-include('../partials/scripts.php');
-?>
+  <?php
+  include('../partials/scripts.php');
+  ?>
 </body>
 
 </html>

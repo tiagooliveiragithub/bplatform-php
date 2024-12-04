@@ -30,7 +30,7 @@ $users = mysqli_query($connection, $query);
                         <?php
                         include('partials/side-menu.php');
                         ?>
-                        <main>
+                        <div class="dashboard-main">
                             <h2>Manage Users</h2>
                             <?php if (mysqli_num_rows($users) > 0): ?>
                                 <table>
@@ -66,7 +66,7 @@ $users = mysqli_query($connection, $query);
                             <?php else: ?>
                                 <div class="alert-msg error">No users found</div>
                             <?php endif ?>
-                        </main>
+                        </div>
                     </div>
                 </section>
             </div>

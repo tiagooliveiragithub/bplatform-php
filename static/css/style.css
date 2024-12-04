@@ -2,7 +2,7 @@
   --clr-primary: #121e2a;
   --clr-secondary: #e26a6a;
   --clr-tertiary: #d4ac47;
-  
+
   --clr-primary-card: #d3d7db;
   --clr-background: #c8c3c3;
   --clr-text: #2a2832;
@@ -48,7 +48,12 @@ a:hover {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.2;
   margin: 3rem 0;
 }
@@ -104,7 +109,7 @@ textarea {
 
 input:focus,
 select:focus,
-textarea:focus{
+textarea:focus {
   outline: none;
 }
 
@@ -114,7 +119,9 @@ input[type="checkbox"] {
 
 /* Main Layouts */
 
-body, html, .website-wrapper {
+body,
+html,
+.website-wrapper {
   height: 100%;
 }
 
@@ -137,7 +144,8 @@ body, html, .website-wrapper {
   max-width: 90rem;
 }
 
-.section-content-wide, .section-content-narrow {
+.section-content-wide,
+.section-content-narrow {
   margin-inline: auto;
 }
 
@@ -211,7 +219,9 @@ body, html, .website-wrapper {
   margin: 0;
 }
 
-.featured i, .featured span, .featured {
+.featured i,
+.featured span,
+.featured {
   font-size: 2rem;
 }
 
@@ -220,6 +230,7 @@ body, html, .website-wrapper {
   grid-template-columns: repeat(auto-fill, minmax(min(30rem, 100%), 1fr));
   gap: 2.5rem;
 }
+
 .card-gap {
   padding: 3rem;
 }
@@ -310,10 +321,11 @@ body, html, .website-wrapper {
   filter: brightness(85%) !important;
 }
 
-.btn:focus, .btn:active {
+.btn:focus,
+.btn:active {
   filter: brightness(85%) !important;
   box-shadow: 0 0 5px var(--clr-black) !important;
-} 
+}
 
 .btn-delete {
   background: var(--clr-error) !important;
@@ -324,8 +336,15 @@ body, html, .website-wrapper {
   padding-top: 3rem;
 }
 
-.single-post-title, .single-post-excerpt {
+.single-post-title,
+.single-post-excerpt {
   margin: 0;
+}
+
+.single-post-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Post Meta */
@@ -344,7 +363,10 @@ body, html, .website-wrapper {
   justify-content: center;
   color: var(--clr-gray);
   text-decoration: none;
+  font-weight: bold;
 }
+
+
 
 .post-meta-link:hover {
   text-decoration: none;
@@ -358,11 +380,13 @@ body, html, .website-wrapper {
   gap: 1.5rem;
 }
 
-.post-tags .post-tag-link, .post-tags .post-tag-link i {
+.post-tags .post-tag-link,
+.post-tags .post-tag-link i {
   color: var(--clr-gray);
 }
 
-.post-tags .post-tag-link:hover, .post-tags .post-tag-link:hover i {
+.post-tags .post-tag-link:hover,
+.post-tags .post-tag-link:hover i {
   color: var(--clr-secondary);
   text-decoration: none;
 }
@@ -377,30 +401,31 @@ body, html, .website-wrapper {
 
 /* Sign In and Sign Up Menu*/
 
-.sign-section{
+.sign-section {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.post-section{
+.post-section {
   display: flex;
   justify-content: center;
   height: 100vh;
 }
 
-.form-container{
-    max-width: 120rem; /*1920px*/
-    text-align: center;
-    min-width: 70%;
+.form-container {
+  max-width: 120rem;
+  /*1920px*/
+  text-align: center;
+  min-width: 70%;
 }
 
-.form-control.inline{
+.form-control.inline {
   flex-direction: row;
 }
 
-.form-control{
+.form-control {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -414,9 +439,9 @@ body, html, .website-wrapper {
   border-radius: 0.5rem;
 }
 
-.alert-msg.error{
-    background: var(--clr-error-background);
-    color: var(--clr-error);
+.alert-msg.error {
+  background: var(--clr-error-background);
+  color: var(--clr-error);
 }
 
 .alert-msg.success {
@@ -424,9 +449,10 @@ body, html, .website-wrapper {
   color: var(--clr-success);
 }
 
-.form-container p{
+.form-container p {
   margin: 0.3rem;
 }
+
 /* 
 DASHBOARD
 */
@@ -461,6 +487,7 @@ DASHBOARD
   padding: 0.5rem;
   text-decoration: none;
 }
+
 .dashboard aside h5 {
   margin: 0.5rem;
 }
@@ -486,32 +513,32 @@ DASHBOARD
   background: var(--clr-tertiary);
 }
 
-.dashboard main {
+.dashboard .dashboard-main {
   margin-left: 1.5rem;
 }
 
-.dashboard main h2 {
+.dashboard .dashboard-main h2 {
   margin: 0 0 2rem 0;
   line-height: 1;
 }
 
-.dashboard main table {
+.dashboard .dashboard-main table {
   width: 100%;
   text-align: left;
 }
 
-.dashboard main table th {
+.dashboard .dashboard-main table th {
   background: var(--color-gray-700);
   padding: 0.8rem;
   color: var(--color-white);
 }
 
-.dashboard main table td {
+.dashboard .dashboard-main table td {
   padding: 0.8rem;
   border-bottom: 1px solid var(--color-gray-200);
 }
 
-.dashboard main table tr:hover td {
+.dashboard .dashboard-main table tr:hover td {
   background: var(--clr-background);
   color: var(--clr-text);
   cursor: default;
@@ -519,9 +546,10 @@ DASHBOARD
 }
 
 /* Password Inputs */
-.password-input{
+.password-input {
   position: relative;
 }
+
 .password-input input {
   width: 100%;
   padding-right: 3rem;
@@ -542,6 +570,3 @@ DASHBOARD
 .password-input i:hover {
   color: var(--clr-secondary);
 }
-
-
-

@@ -38,34 +38,28 @@ if (isset($_GET['id'])) {
             <div class="post-meta-item">
               <a class="post-meta-link" href="<?= WEBSITE_URL ?>general/author-posts.php?id=<?= $post['author_id'] ?>">
                 <i class="fa-solid fa-user"></i>
-                <span>
-                  <div class="post__author">
-                    <?php
-                    // fetch author using author_id 
-                    $author_id = $post['author_id'];
-                    $author_query = "SELECT * FROM users WHERE id=$author_id";
-                    $author_result = mysqli_query($connection, $author_query);
-                    $author = mysqli_fetch_assoc($author_result);
-                    ?>
-                    <h6><?= "{$author['firstname']} {$author['lastname']}" ?></h6>
-                  </div>
+                <span class="post__author">
+                  <?php
+                  // fetch author using author_id 
+                  $author_id = $post['author_id'];
+                  $author_query = "SELECT * FROM users WHERE id=$author_id";
+                  $author_result = mysqli_query($connection, $author_query);
+                  $author = mysqli_fetch_assoc($author_result);
+                  ?>
+                  <span><?= "{$author['firstname']} {$author['lastname']}" ?></span>
                 </span>
               </a>
             </div>
             <div class="post-meta-item">
               <span class="post-meta-link">
                 <i class="fa-solid fa-calendar-days"></i>
-                <span>
-                  <h6><?= date("M d, Y - H:i", strtotime($post['date_time'])) ?></h6>
-                </span>
+                <span><?= date("M d, Y - H:i", strtotime($post['date_time'])) ?></span>
               </span>
             </div>
             <div class="post-meta-item">
               <span class="post-meta-link">
                 <i class="fa-solid fa-eye"></i>
-                <span>
-                  <h6><?= $post['views'] ?></h6>
-                </span>
+                <span class="post-views"><?= $post['views'] ?></span>
               </span>
             </div>
           </div>
@@ -75,6 +69,7 @@ if (isset($_GET['id'])) {
           </div>
 
         </div>
+      </div>
     </main>
   </div>
   <?php
