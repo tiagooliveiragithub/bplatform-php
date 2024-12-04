@@ -10,7 +10,6 @@ if (isset($_POST['submit'])) {
     $createpassword = filter_var($_POST['createpassword'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $confirmpassword = filter_var($_POST['confirmpassword'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $user_type = filter_var($_POST['userrole'], FILTER_SANITIZE_NUMBER_INT);
-    $avatar = $_FILES['avatar'];
 
     // validate input values 
     if (!$firstname) {
@@ -23,8 +22,6 @@ if (isset($_POST['submit'])) {
         $_SESSION['add-user'] = "Please insert your email";
     } elseif (strlen($createpassword) < 8 || strlen($confirmpassword) < 8) {
         $_SESSION['add-user'] = "Password should have more than 8 characters";
-    } elseif (!$avatar['name']) {
-        $_SESSION['add-user'] = "Please insert your avatar";
     } else {
         // checking if passwords dont match 
         if ($createpassword !== $confirmpassword) {
@@ -34,7 +31,6 @@ if (isset($_POST['submit'])) {
             $hased_password = password_hash($createpassword, PASSWORD_DEFAULT);
 
             // checking if username or email already exist 
-
             $user_check_query = "SELECT * FROM users WHERE (username='$username' OR email='$email')";
             $user_check_result = mysqli_query($connection, $user_check_query);
             if (mysqli_num_rows($user_check_result) > 0) {
@@ -49,7 +45,7 @@ if (isset($_POST['submit'])) {
         header('location: ' . WEBSITE_URL . 'admin/add-user.php');
         die();
     } else {
-        $insert_user_query = "INSERT INTO users (firstname, lastname, username, email, password, avatar, user_type) VALUES ('$firstname', '$lastname', '$username', '$email', '$hased_password', '$avatar_name', '$user_type')";
+        $insert_user_query = "INSERT INTO users (firstname, lastname, username, email, password, user_type) VALUES ('$firstname', '$lastname', '$username', '$email', '$hased_password', '$user_type')";
         $insert_user_result = mysqli_query($connection, $insert_user_query);
 
         if (!mysqli_errno($connection)) {

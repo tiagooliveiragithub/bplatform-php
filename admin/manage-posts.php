@@ -53,9 +53,9 @@ $posts = mysqli_query($connection, $query);
                         ?>
                         <td><?= $post['title'] ?></td>
                         <td><?= $category['title'] ?></td>
-                        <td><a href="<?= WEBSITE_URL ?>edit-post.php?id=<?= $post['id'] ?>" class="btn sm">Edit</a>
+                        <td><a href="<?= WEBSITE_URL ?>admin/edit-post.php?id=<?= $post['id'] ?>" class="btn sm">Edit</a>
                         </td>
-                        <td><a href="<?= WEBSITE_URL ?>delete-post.php?id=<?= $post['id'] ?>"
+                        <td><a href="<?= WEBSITE_URL ?>admin/delete-post.php?id=<?= $post['id'] ?>"
                             class="btn sm danger">Delete</a></td>
                       </tr>
                     <?php endwhile ?>

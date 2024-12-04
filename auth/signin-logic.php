@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
             if (password_verify($password, $db_password)) {
                 // set session for access control 
                 $_SESSION['user-id'] = $user_record['id'];
-                // set session if user is an admin 
+                // set session if user is an admin or author
                 if ($user_record['user_type'] == 2) {
                     $_SESSION['user_type'] = "admin";
                 } elseif ($user_record['user_type'] == 1) {
@@ -53,5 +53,3 @@ if (isset($_POST['submit'])) {
     header('location: ' . WEBSITE_URL . 'auth/signin.php');
     die();
 }
-
-?>
