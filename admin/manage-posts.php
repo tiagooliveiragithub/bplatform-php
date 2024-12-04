@@ -9,7 +9,12 @@ include('partials/permission.php');
 
 // fetch currents user posts from db 
 $current_user_id = $_SESSION['user-id'];
-$query = "SELECT id, title, category_id FROM posts WHERE author_id=$current_user_id ORDER BY id DESC";
+
+if ($_SESSION['user_type'] == 'admin') {
+  $query = "SELECT id, title, category_id FROM posts ORDER BY id DESC";
+} else {
+  $query = "SELECT id, title, category_id FROM posts WHERE author_id=$current_user_id ORDER BY id DESC";
+}
 $posts = mysqli_query($connection, $query);
 
 ?>
